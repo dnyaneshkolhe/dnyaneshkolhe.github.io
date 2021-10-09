@@ -1,25 +1,38 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+  <meta charset="utf-8">
+  <title>Recaptcha Example</title>
 </head>
+
 <body>
-    <h1>Document</h1>
-    Hello
-    <button class="g-recaptcha" 
-    data-sitekey="6LdFALwcAAAAAN2QZ0NNFMNf4skKPZWckLzJfCcu" 
-    data-callback='onSubmit' 
-    data-action='submit'>Submit</button>
+<br>
+<br>
+<form action="" method="post">
+  <div class="form-row">
+  <input name="name_1" placeholder="Your name" type="text">
+  </div>
 
+  <br>
 
-<script>
-    function onSubmit(token) {
-      document.getElementById("demo-form").submit();
-    }
-  </script>
-</body>
+  <div class="form-row">
+  <input name="surname_1" placeholder="Your surname" type="text">
+  </div>
+
+  <br>
+
+  <div class="form-row">
+    <div class="g-recaptcha" data-sitekey="6LdFALwcAAAAAN2QZ0NNFMNf4skKPZWckLzJfCcu"></div>
+  </div>
+
+  <br>
+
+  <input name="sendEmail" type="submit" value="Call me back">
+
+  <br>
+
+  <h4 id="response"></h4>
+  </form>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </body>
 </html>
