@@ -1,57 +1,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Recaptcha Example</title>
+  <title>OctelMark Technology</title>
 </head>
 
 <body>
-<br>
-<br>
-<form action="" method="post">
-  <div class="form-row">
-  <input name="name_1" placeholder="Your name" type="text">
-  </div>
+<h2> We are updating..... <h2>
 
-  <br>
-
-  <div class="form-row">
-  <input name="surname_1" placeholder="Your surname" type="text">
-  </div>
-
-  <br>
-
-  <div class="form-row">
-    <div class="g-recaptcha" data-sitekey="6LdFALwcAAAAAN2QZ0NNFMNf4skKPZWckLzJfCcu"></div>
-    <span id="captcha" style="color:red" /></span> <!-- this will show captcha errors -->
-  </div>
-
-  <br>
-
-  <input name="sendEmail" type="submit" value="Call me back">
-
-  <br>
-
-  <h4 id="response"></h4>
-  </form>
-
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-  <script>
-
-function get_action(form) 
-{
-    var v = grecaptcha.getResponse();
-    if(v.length == 0)
-    {
-        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-        return false;
-    }
-    else
-    {
-         document.getElementById('captcha').innerHTML="Captcha completed";
-        return true; 
-    }
-}
-
-</script>
-  </body>
+</body>
 </html>
