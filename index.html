@@ -1,135 +1,399 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Octelmark Technology | Copyright 2022 v1.0 */
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444;
+}
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+a {
+  text-decoration: none;
+  color: #4f92af;
+}
 
-  <title>Octelmark Technology</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+a:hover {
+  color: #5eb8df;
+  text-decoration: none;
+}
 
-  <!-- Favicons -->
-  <link href="assets/img/apple-touch-icon.png" rel="">
-  <link href="assets/img/apple-touch-icon.png" rel="">
-  <!-- <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+h1, h2, h3, h4, h5, h6, .font-primary {
+  font-family: "Raleway", sans-serif;
+}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  height: 80px;
+  padding: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+#header .logo h1 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+#header .logo h1 a, #header .logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+#header .contact-link a {
+  color: #fff;
+  padding-right: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+#header .contact-link a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  #header .logo h1 {
+    font-size: 28px;
+    padding: 8px 0;
+  }
+}
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/img2.jpg") top center;
+  background-color: rgb(78, 175, 175);
+  background-size: cover;
+  position: relative;
+  margin-top: -80px;
+  z-index: 9;
+  /* countdown */
+}
+#hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+}
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 56px;
+  /* text-transform: uppercase; */
+  color: rgb(97, 79, 79);
+}
+#hero h2 {
+  color: #eee;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+#hero .countdown {
+  font-size: 48px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 56px;
+  margin: 30px 0 60px 0;
+}
+#hero .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+#hero .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+#hero .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+#hero .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading-notify 1s linear infinite;
+  animation: animate-loading-notify 1s linear infinite;
+}
+@-webkit-keyframes animate-loading-notify {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading-notify {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  #hero .php-email-form input {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 575px) {
+  #hero .countdown {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
 
+.section-bg {
+  background-color: #f7fafc;
+}
 
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+}
+.section-title p {
+  margin-bottom: 0;
+}
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-</head>
+/*--------------------------------------------------------------
+# Contact Us
+--------------------------------------------------------------*/
+.contact .contact-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.contact .contact-info i {
+  font-size: 48px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #4f92af;
+}
+.contact .contact-info address, .contact .contact-info p {
+  margin-bottom: 0;
+  color: #444;
+}
+.contact .contact-info h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 300;
+  color: #999;
+}
+.contact .contact-info a {
+  color: #000;
+}
+.contact .contact-info a:hover {
+  color: #4f92af;
+}
+.contact .contact-address, .contact .contact-phone, .contact .contact-email {
+  margin-bottom: 20px;
+}
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+.contact .php-email-form input, .contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+  border-color: #4f92af;
+}
+.contact .php-email-form button[type=submit] {
+  background: #4f92af;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+}
+.contact .php-email-form button[type=submit]:hover {
+  background: #72a8bf;
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 768px) {
+  .contact .contact-phone {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+  .contact .contact-address, .contact .contact-phone, .contact .contact-email {
+    padding: 20px 0;
+  }
+}
 
-<body>
-<!-- <body oncontextmenu="return false"> -->
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  /* background: #0d182d; */
+  background-color: rgb(15, 15, 15);
+  padding: 25px 0;
+  color: #fff;
+  font-size: 14px;
+}
+#footer .copyright {
+  text-align: center;
+}
+#footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+#footer .credits a {
+  color: #575353;
+}
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
+strong a{
+  color: #f5ad7e;
+}
 
-      <div class="logo">
-        <h1 class="text-light"><a href="index.html"><span>Octelmark Technology</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
+strong a:hover{
+  color: #ffc8a3;
+}
+/* dropdown */
+.dropbtn {
+  /* background-color: darkslategray; */
+  background-color: #000;
+  color: rgb(255, 255, 255);
+  padding-right: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  margin-right: 10px;
+}
 
-      <div class="contact-link float-right">
-        <a href="#Home" class="scrollto">Home</a>
-        <div class="dropdown">
-          <button class="dropbtn">Services</button>
-          <div class="dropdown-content">
-            <a href="#">Web Development</a>
-            <a href="#">Web Design</a>
-            <a href="#">App Development</a>
-            <a href="#">Digital Marketing</a>
-          </div>
-        </div>
-        <a href="javascript:void(0)" onclick="location.href='mailto:info@octelmark.com'" class="scrollto">Contact Us</a>
-      </div>
-    </div>
-  </header><!-- End #header -->
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <h2>Thanks for visting !</h2>
-      <h2>We're working hard to improve our website and we'll ready to launch after</h2>
-  </section><!-- End Hero -->
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /* background-color: darkslategray; */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(235, 235, 235, 0.2);
+  z-index: 1;
+}
 
-  <main id="main">
+.dropdown-content a {
+  /* color: rgb(196, 196, 196); */
+  padding: 8px 5px;
+  align-content: center;
+  text-decoration: none;
+  display: block;
+}
 
-  </main><!-- End #main -->
+.dropdown-content a:hover {background-color: #000;;}
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        <strong><a href="https://octelmark.com/">Octelmark Technology</a></strong><span> | &copy; Copyright 2022. All Rights Reserved
-      </div>
-    </div>
-  </footer><!-- End #footer -->
+.dropdown:hover .dropdown-content {display: block;}
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <!-- <script type="text/javascript">
-    function mousehandler(e) {
-        var myevent = (isNS) ? e : event;
-        var eventbutton = (isNS) ? myevent.which : myevent.button;
-        if ((eventbutton == 2) || (eventbutton == 3)) return false;
-    }
-    document.oncontextmenu = mischandler;
-    document.onmousedown = mousehandler;
-    document.onmouseup = mousehandler;
-    function disableCtrlKeyCombination(e) {
-        var forbiddenKeys = new Array("a", "s", "c", "x","u");
-        var key;
-        var isCtrl;
-        if (window.event) {
-            key = window.event.keyCode;
-            //IE
-            if (window.event.ctrlKey)
-                isCtrl = true;
-            else
-                isCtrl = false;
-        }
-        else {
-            key = e.which;
-            //firefox
-            if (e.ctrlKey)
-                isCtrl = true;
-            else
-                isCtrl = false;
-        }
-        if (isCtrl) {
-            for (i = 0; i < forbiddenKeys.length; i++) {
-                //case-insensitive comparation
-                if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-</script> -->
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-
-</body>
-
-</html>
+.dropdown:hover .dropbtn {background-color: #000;; text-decoration: underline;}
